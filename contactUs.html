@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function() { 
+      $("#header").load("includes/header.html");
+      });
+      $(function() { 
+      $("#footer").load("includes/footer.html");
+      });
+      </script>
+</head>
+<body>
+    <section id="header"> </section>
+
+    <section class="form">
+        
+        <div id="contact">
+            <h2>Contact us for a quote and designs</h2>
+            <input type="text" placeholder="Your Name" id="name">
+            <input type="email" placeholder="Email" id="email">
+            <input type="number" placeholder="Phone Number" id="tel">
+            <label>Your Sport</label>
+            <select>
+                <option>Football</option>
+                <option>NBA</option>
+                <option>Tennis</option>
+                <option>Cricket</option>
+                <option>Other</option>
+
+            </select>
+            <textarea placeholder="Enter Your Mesage"></textarea>
+            <button id="send">Send</button>
+        </div>
+
+
+
+    </section>
+
+    <section id="questions">
+
+        <h2>Most asked questions</h2>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    What are the top selling sneakers of 2023   ?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>The report also included a list of the top selling sneaker styles of the years so far. Nike Inc. earned top sports on the list with its Jordan and Nike brands and Adidas earned one spot for its NMD R1. From the Nike Air Max 90 to the Air Force 1 Low, here are the top-selling sneakers of 2023 so far, according to Powell.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    How long does it take Nike to ship? 
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  When you order from Nike, you can expect your order to arrive within a few days. Depending on where you live, the delivery time can vary, but typically it takes three to five business days for standard delivery.
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    How do I Claim my Nike warranty?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    How to Claim Your Nike Warranty: Navigate to the warranty page for the product you wish to claim. Follow the instructions to register your product for warranty coverage. Provide details such as the product’s serial number and purchase date. Complete the form and submit it. Wait for your claim to be processed and approved.
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="your-photo.jpg" class="img-fluid" alt="Your Photo">
+              </div>
+              <div class="col-md-6">
+                <p>Your description goes here...</p>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <div id="maps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47934.06596473241!2d19.776537823196545!3d41.33324177354671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350310470fac5db%3A0x40092af10653720!2sTirana%2C%20Albania!5e0!3m2!1sen!2s!4v1712930047718!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    
+
+    <section id="footer"> </section>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

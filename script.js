@@ -1,47 +1,179 @@
 const products=[
     {
         id:1,
-        img: "images/whitetshirt.jpeg",
+        img: "images/sh1.png",
         name: "White t-shirt",
         price:55,
         
     },
     {
         id:2,
-        img: "images/blacktshirt.jpeg",
+        img: "images/k5.png",
         name: "Black t-shirt",
         price:60,
         
     },
     {
         id:3,
-        img: "images/lightblue.jpeg",
+        img: "images/a4.png",
         name: "Light Blue t-shirt",
         price:70,
         
     },
     {
         id:4,
-        img: "images/greytshirt.jpeg",
+        img: "images/k1.png",
         name: "Grey t-shirt",
         price:60,
         
     },
     {
         id:5,
-        img: "images/green.jpeg",
+        img: "images/a6.png",
         name: "Green t-shirt",
         price:65,
         
     },
     {
         id:6,
-        img: "images/darkblue.jpeg",
+        img: "images/sh6.png",
         name: "Darkblue t-shirt",
         price:80,
         
     }
-]
+];
+const kidsProducts=[
+    {
+        id:1,
+        img: "images/k1.png",
+        name: "White t-shirt",
+        price:55,
+        
+    },
+    {
+        id:2,
+        img: "images/k2.png",
+        name: "Black t-shirt",
+        price:60,
+        
+    },
+    {
+        id:3,
+        img: "images/k3.png",
+        name: "Light Blue t-shirt",
+        price:70,
+        
+    },
+    {
+        id:4,
+        img: "images/k4.png",
+        name: "Grey t-shirt",
+        price:60,
+        
+    },
+    {
+        id:5,
+        img: "images/k5.png",
+        name: "Green t-shirt",
+        price:65,
+        
+    },
+    {
+        id:6,
+        img: "images/k6.png",
+        name: "Darkblue t-shirt",
+        price:80,
+        
+    }
+];
+const accessoriesProducts=[
+    {
+        id:1,
+        img: "images/a1.png",
+        name: "White t-shirt",
+        price:55,
+        
+    },
+    {
+        id:2,
+        img: "images/a2.png",
+        name: "Black t-shirt",
+        price:60,
+        
+    },
+    {
+        id:3,
+        img: "images/a3.png",
+        name: "Light Blue t-shirt",
+        price:70,
+        
+    },
+    {
+        id:4,
+        img: "images/a4.png",
+        name: "Grey t-shirt",
+        price:60,
+        
+    },
+    {
+        id:5,
+        img: "images/a5.png",
+        name: "Green t-shirt",
+        price:65,
+        
+    },
+    {
+        id:6,
+        img: "images/a6.png",
+        name: "Darkblue t-shirt",
+        price:80,
+        
+    }
+];
+const shoesProducts=[
+    {
+        id:1,
+        img: "images/sh1.png",
+        name: "White t-shirt",
+        price:55,
+        
+    },
+    {
+        id:2,
+        img: "images/sh2.png",
+        name: "Black t-shirt",
+        price:60,
+        
+    },
+    {
+        id:3,
+        img: "images/sh3.png",
+        name: "Light Blue t-shirt",
+        price:70,
+        
+    },
+    {
+        id:4,
+        img: "images/sh4.png",
+        name: "Grey t-shirt",
+        price:60,
+        
+    },
+    {
+        id:5,
+        img: "images/sh5.png",
+        name: "Green t-shirt",
+        price:65,
+        
+    },
+    {
+        id:6,
+        img: "images/sh6.png",
+        name: "Darkblue t-shirt",
+        price:80,
+        
+    }
+];
 let destinationContainerDisplay =document.querySelector('.destination-container');
 let productHtml= '';
 products.forEach((product) =>{
@@ -61,5 +193,68 @@ products.forEach((product) =>{
 `;
 });
 destinationContainerDisplay.innerHTML=productHtml;
+
+
+let kidsContainerDisplay =document.querySelector('.kids-container');
+let kidsProductHtml= '';
+kidsProducts.forEach((kidsProduct) =>{
+    kidsProductHtml+= ` <div class="destination">
+    <img src="${kidsProduct.img}"  >
+    <h5>${kidsProduct.name}</h5>
+    <p>$${kidsProduct.price}</p>
+    <span>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star-half"></i>
+    </span>
+    <button class="cartButton">Add to cart</button>
+</div>
+`;
+});
+kidsContainerDisplay.innerHTML=kidsProductHtml;
+
+
+let accessoriesContainerDisplay =document.querySelector('.accessories-container');
+let accessoriesHtml= '';
+accessoriesProducts.forEach((accessoriesProduct) =>{
+    accessoriesHtml+= ` <div class="destination">
+    <img src="${accessoriesProduct.img}"  >
+    <h5>${accessoriesProduct.name}</h5>
+    <p>$${accessoriesProduct.price}</p>
+    <span>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star-half"></i>
+    </span>
+    <button class="cartButton">Add to cart</button>
+</div>
+`;
+});
+accessoriesContainerDisplay.innerHTML=accessoriesHtml;
+
+
+let shoesContainerDisplay =document.querySelector('.shoes-container');
+let shoesHtml= '';
+shoesProducts.forEach((shoesProduct) =>{
+    shoesHtml+= ` <div class="destination">
+    <img src="${shoesProduct.img}"  >
+    <h5>${shoesProduct.name}</h5>
+    <p>$${shoesProduct.price}</p>
+    <span>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star-half"></i>
+    </span>
+    <button class="cartButton">Add to cart</button>
+</div>
+`;
+});
+shoesContainerDisplay.innerHTML=shoesHtml;
 
 

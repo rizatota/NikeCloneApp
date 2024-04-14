@@ -286,10 +286,10 @@ nav{
     font-size: 2rem;
 }
 .fa-google-play{
-font-size: 3rem;    
+font-size: 2rem;    
 }
 .fa-app-store-ios{
-    font-size: 3rem;
+    font-size: 2rem;
 } 
 
 .cartButton{
@@ -305,4 +305,37 @@ font-size: 3rem;
     color: gold;
     font-size: 20px;
   }
- 
+ #contact{
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 15px;
+ }
+ #contact>input ,  #contact>textarea,#contact>select{
+    margin: 25px;
+    padding: 10px;
+    width: 50%;
+ }
+ #contact>label ,#contact>h2{
+    font-size: 2.5rem;
+ }
+ #contact>select{
+    font-size: 1.5rem;
+ }
+ #contact>button{
+    background-color: black;
+    color: white;
+    padding: 10px 35px;
+    margin: 25px;
+ }
+#maps{
+    margin: 55px 25px ;
+}
+#questions h2{
+    font-size: 2.5rem;
+    text-align: center;
+} 
