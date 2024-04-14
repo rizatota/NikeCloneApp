@@ -59,7 +59,7 @@ const kidsProducts=[
     },
     {
         id:3,
-        img: "images/k3.png",
+        img: "images/k.png",
         name: "Light Blue t-shirt",
         price:70,
         
@@ -161,7 +161,7 @@ const shoesProducts=[
     },
     {
         id:5,
-        img: "images/sh5.png",
+        img: "images/sh5.jpg",
         name: "Green t-shirt",
         price:65,
         
@@ -174,6 +174,9 @@ const shoesProducts=[
         
     }
 ];
+
+getProducts();
+ function getProducts(){
 let destinationContainerDisplay =document.querySelector('.destination-container');
 let productHtml= '';
 products.forEach((product) =>{
@@ -192,9 +195,17 @@ products.forEach((product) =>{
 </div>
 `;
 });
-destinationContainerDisplay.innerHTML=productHtml;
+destinationContainerDisplay.innerHTML=productHtml;};
 
-
+productHtml.addEventListener('click',(event)=>{
+    let positionClick = event.target;
+    if (positionClick.classList.contains('cartButton')){
+        alert('1');
+    }
+});
+ 
+ 
+function getKidsProducts(){
 let kidsContainerDisplay =document.querySelector('.kids-container');
 let kidsProductHtml= '';
 kidsProducts.forEach((kidsProduct) =>{
@@ -213,9 +224,9 @@ kidsProducts.forEach((kidsProduct) =>{
 </div>
 `;
 });
-kidsContainerDisplay.innerHTML=kidsProductHtml;
+kidsContainerDisplay.innerHTML=kidsProductHtml;};
 
-
+function getAccessories(){
 let accessoriesContainerDisplay =document.querySelector('.accessories-container');
 let accessoriesHtml= '';
 accessoriesProducts.forEach((accessoriesProduct) =>{
@@ -234,9 +245,9 @@ accessoriesProducts.forEach((accessoriesProduct) =>{
 </div>
 `;
 });
-accessoriesContainerDisplay.innerHTML=accessoriesHtml;
+accessoriesContainerDisplay.innerHTML=accessoriesHtml;};
 
-
+function getShoes(){
 let shoesContainerDisplay =document.querySelector('.shoes-container');
 let shoesHtml= '';
 shoesProducts.forEach((shoesProduct) =>{
@@ -256,5 +267,19 @@ shoesProducts.forEach((shoesProduct) =>{
 `;
 });
 shoesContainerDisplay.innerHTML=shoesHtml;
+console.log(shoesContainerDisplay)
+};
 
-
+ 
+    let iconCart = document.querySelector(".icon-cart");
+    let body = document.querySelector("body");
+    let closeCart = document.querySelector(".close");
+    iconCart.addEventListener('click', () => {
+        body.classList.toggle('showCart')
+    });
+    closeCart.addEventListener('click', () => {
+        body.classList.toggle('showCart')
+    });
+ 
+    
+ 

@@ -12,18 +12,7 @@
 
 @media screen and (max-width:800px) {
     
-    
-    #nav-mid>ul>a{
-        margin:0px 0.7em !important;
-        font-size: 1.3rem !important;
-    }
-    #nav-left > h1{
-        font-size: 1.6rem !important;
-        font-weight: bolder;
-    }
-    #nav-right>a{
-        font-size: 1.3rem !important;
-    }
+
     
 
    
@@ -50,100 +39,8 @@
 
 
 }
-@media screen and (max-width:650px){
-   
-    #nav-mid>ul>a{
-        margin:0px 0.4em !important;
-    }
-
-}
-
-@media screen and (max-width:550px){
-    #nav-mid>ul>a{
-        margin:0px 0.5em !important;
-        font-size: 1.1rem !important;
-    }
-    
-    #nav-left > h1{
-        font-size: 1.3rem !important;
-        font-weight: bolder;
-    }
-    #nav-right>a{
-        font-size: 1.1rem !important;
-    }
-    .element1>a>img{
-        width: 90% !important;
-    }
-    
-
-}
-
-@media screen and (max-width:450px){
-   
-    #nav-mid>ul>a{
-        display: none !important;
-    }
-
-}
-
-nav{
-    background-color:#0b0b0c;
-    width: 100%;
-    min-height: 10vh;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid rgb(8, 7, 7);
-    box-shadow: 0 0 3px 3px rgba(7, 7, 7, 0.83);
-    position: sticky;
-    top:0;
-    z-index: 100000;
-}
-.center{
-    display: grid;
-    place-items: center;
-}
-#nav-left > h1{
-    font:bolder 2rem sans-serif;
-    color:white;;
-}
-#nav-mid >ul{
-    display: flex;
-    list-style: none;
-}
-#nav-mid>ul>a{
-    box-sizing: border-box;
-    text-decoration: none;
-    margin:0px 1em;
-    font-size: 1.5rem;
-    color: white;;
-    font-weight: bolder;
-}
-#nav-mid>ul>a:focus{
-    transition-duration: 4s;
-}
-#nav-right{
-    display: flex;
-}
-#nav-right>a{
-    text-decoration: none;
-    margin: 0px 0.5em;
-    font-size: 1.5rem;
-    color: white;
-    font-weight:bold;
-}
-#nav-mid>ul>a>li:hover{
-    border-bottom: 2px solid rgb(96, 94, 94);
-    transition-duration: 0.1s;
-}
-#nav-right>a:hover{
-    transform: translateY(2px);
-    color: blue;
-    transition-duration: 0.1s;
-}
-/* ..................................................................................................... */
 
 
-/* ..................................................................................................... */
 
 .destinations{
     height: auto;
@@ -161,7 +58,7 @@ nav{
     transition-duration: 0.1s;
 }
 
-.destination-container{
+.destination-container ,.shoes-container ,.accessories-container, .kids-container{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -169,6 +66,7 @@ nav{
     margin: 4em 0px;
 
 }
+
 .destination{
     display: flex;
     flex-direction: column;
@@ -339,3 +237,193 @@ font-size: 2rem;
     font-size: 2.5rem;
     text-align: center;
 } 
+
+.navbar-nav.navbar-center {
+    position:sticky;
+}
+#about>.container{
+    padding: 10px;
+}
+.col-md-6{
+padding: 10px;
+align-items: center !important;
+display: flex!important;
+flex-direction: column!important;
+}
+
+
+.container{
+    width: 900px;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+}
+svg{
+    width: 30px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: -20px;
+}
+.title{
+    font-size: xx-large;
+}
+.listProduct .item img{
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+}
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.listProduct .item{
+    background-color: #EEEEE6;
+    padding: 20px;
+    border-radius: 20px;
+}
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+.listProduct .item .price{
+    letter-spacing: 7px;
+    font-size: small;
+}
+.listProduct .item button{
+    background-color: #353432;
+    color: #eee;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+/* cart */
+.cartTab{
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+    z-index: 100001;
+}
+body.showCart .cartTab{
+    right: 0;
+}
+body.showCart .container{
+    transform: translateX(-250px);
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab button{
+    background-color: #E8BC0E;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .close{
+    background-color: #eee;
+}
+.listCart .item img{
+    width: 100%;
+}
+.listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+    cursor: auto;
+}
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+@media only screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.nav{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 15px;
+    overflow: hidden;
+}
+.nav .links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav .links li{
+list-style-type: none;
+}
+.nav .links li a{
+    text-decoration: none;
+    margin: 10px;
+    color: #0d0d0e;
+    font-size: 1.7rem;
+    
+}
