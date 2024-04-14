@@ -196,13 +196,6 @@ products.forEach((product) =>{
 `;
 });
 destinationContainerDisplay.innerHTML=productHtml;};
-
-productHtml.addEventListener('click',(event)=>{
-    let positionClick = event.target;
-    if (positionClick.classList.contains('cartButton')){
-        alert('1');
-    }
-});
  
  
 function getKidsProducts(){
@@ -281,5 +274,5 @@ console.log(shoesContainerDisplay)
         body.classList.toggle('showCart')
     });
  
-    
+
  
