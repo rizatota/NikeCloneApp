@@ -44,42 +44,42 @@ const products=[
 ];
 const kidsProducts=[
     {
-        id:1,
+        id:7,
         img: "images/k1.png",
         name: "White t-shirt",
         price:55,
         
     },
     {
-        id:2,
+        id:8,
         img: "images/k2.png",
         name: "Black t-shirt",
         price:60,
         
     },
     {
-        id:3,
+        id:9,
         img: "images/k.png",
         name: "Light Blue t-shirt",
         price:70,
         
     },
     {
-        id:4,
+        id:10,
         img: "images/k4.png",
         name: "Grey t-shirt",
         price:60,
         
     },
     {
-        id:5,
+        id:11,
         img: "images/k5.png",
         name: "Green t-shirt",
         price:65,
         
     },
     {
-        id:6,
+        id:12,
         img: "images/k6.png",
         name: "Darkblue t-shirt",
         price:80,
@@ -88,42 +88,42 @@ const kidsProducts=[
 ];
 const accessoriesProducts=[
     {
-        id:1,
+        id:13,
         img: "images/a1.png",
         name: "White t-shirt",
         price:55,
         
     },
     {
-        id:2,
+        id:14,
         img: "images/a2.png",
         name: "Black t-shirt",
         price:60,
         
     },
     {
-        id:3,
+        id:15,
         img: "images/a3.png",
         name: "Light Blue t-shirt",
         price:70,
         
     },
     {
-        id:4,
+        id:16,
         img: "images/a4.png",
         name: "Grey t-shirt",
         price:60,
         
     },
     {
-        id:5,
+        id:17,
         img: "images/a5.png",
         name: "Green t-shirt",
         price:65,
         
     },
     {
-        id:6,
+        id:18,
         img: "images/a6.png",
         name: "Darkblue t-shirt",
         price:80,
@@ -132,42 +132,42 @@ const accessoriesProducts=[
 ];
 const shoesProducts=[
     {
-        id:1,
+        id:19,
         img: "images/sh1.png",
         name: "White t-shirt",
         price:55,
         
     },
     {
-        id:2,
+        id:20,
         img: "images/sh2.png",
         name: "Black t-shirt",
         price:60,
         
     },
     {
-        id:3,
+        id:21,
         img: "images/sh3.png",
         name: "Light Blue t-shirt",
         price:70,
         
     },
     {
-        id:4,
+        id:22,
         img: "images/sh4.png",
         name: "Grey t-shirt",
         price:60,
         
     },
     {
-        id:5,
+        id:23,
         img: "images/sh5.jpg",
         name: "Green t-shirt",
         price:65,
         
     },
     {
-        id:6,
+        id:24,
         img: "images/sh6.png",
         name: "Darkblue t-shirt",
         price:80,
@@ -191,7 +191,7 @@ products.forEach((product) =>{
     <i class="fa-solid fa-star"></i>
     <i class="fa-solid fa-star-half"></i>
     </span>
-    <button class="cartButton">Add to cart</button>
+    <button class="cartButton" data-body-id="${product.id}">Add to cart</button>
 </div>
 `;
 });
@@ -275,4 +275,30 @@ console.log(shoesContainerDisplay)
     });
  
 
- 
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.destination-container').addEventListener('click', function (event) {
+            if (event.target && event.target.classList.contains('cartButton')) {
+                const productId = event.target.getAttribute('data-body-id');
+                console.log(`Product ID ${productId} added to cart.`);
+                let matchingItem;
+                cart.forEach((item)=> {
+                    if (productId === item.productId){
+                        matchingItem = item;
+                    }
+                });
+                if (matchingItem){
+
+                    matchingItem.quantity +=1;
+                }
+                else{
+                    cart.push(
+                    {
+                        productId:  productId,
+                        quantity: 1,
+                    });
+                    console.log(cart);}
+                
+         }
+    });
+    });
+    
