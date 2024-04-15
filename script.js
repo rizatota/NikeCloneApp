@@ -89,7 +89,7 @@ shoesContainerDisplay.innerHTML=shoesHtml;
 console.log(shoesContainerDisplay)
 };
 
- 
+ /*
     let iconCart = document.querySelector(".icon-cart");
     let body = document.querySelector("body");
     let closeCart = document.querySelector(".close");
@@ -100,7 +100,7 @@ console.log(shoesContainerDisplay)
         body.classList.toggle('showCart')
     });
  
-
+*/
 
 function updateCartQuantity(){
     let cartQuantity = 0;
