@@ -1,47 +1,48 @@
 export const products=[
     {
-        id:1,
+        id:'1',
         img: "images/sh1.png",
         name: "White t-shirt",
         price:55,
         
     },
     {
-        id:2,
+        id:'2',
         img: "images/k5.png",
         name: "Black t-shirt",
         price:60,
         
     },
     {
-        id:3,
+        id:'3',
         img: "images/a4.png",
         name: "Light Blue t-shirt",
         price:70,
         
     },
     {
-        id:4,
+        id:'4',
         img: "images/k1.png",
         name: "Grey t-shirt",
         price:60,
         
     },
     {
-        id:5,
+        id:'5',
         img: "images/a6.png",
         name: "Green t-shirt",
         price:65,
         
     },
     {
-        id:6,
+        id:'6',
         img: "images/sh6.png",
         name: "Darkblue t-shirt",
         price:80,
         
     }
 ];
+/*
 const kidsProducts=[
     {
         id:7,
@@ -174,3 +175,4 @@ const shoesProducts=[
         
     }
 ];
+*/

@@ -23,7 +23,7 @@ products.forEach((product) =>{
 });
 destinationContainerDisplay.innerHTML=productHtml;};
  
- 
+ /*
 function getKidsProducts(){
 let kidsContainerDisplay =document.querySelector('.kids-container');
 let kidsProductHtml= '';

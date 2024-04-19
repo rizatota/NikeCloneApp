@@ -1,30 +1,40 @@
-export const cart =[
-    {
-        productId: 1,
-        quantity:1
-    },
-    {
-        productId: 2,
-        quantity:3
-    }
-];
+
+export let cart=JSON.parse(localStorage.getItem('cart'));
+
+if(!cart){
+    cart=[];
+}
+
+
+function saveToStorage(){
+    localStorage.setItem('cart',JSON.stringify(cart));
+
+}
 export function addToCart(productId){
-    let matchingItem;
-    cart.forEach((cartItem)=> {
-        if (productId === cartItem.productId){
-            matchingItem = cartItem;
+    let matchingItem = cart.find(cartItem => cartItem.productId === productId);
+
+    if (matchingItem){
+        matchingItem.quantity += 1;
+    } else {
+        // Add the new product directly to the cart array
+        cart.push({
+            productId: productId,
+            quantity: 1
+        });
+    }
+    saveToStorage();
+    console.log(cart);
+}
+
+
+export function removeFromCart(productId){
+    const newCart = [];
+    cart.forEach((cartItem)=>{
+        if(cartItem.productId !== productId){
+            newCart.push(cartItem);
         }
     });
-    if (matchingItem){
-
-        matchingItem.quantity +=1;
-    }
-    else{
-        cart.push(
-        {
-            productId:  productId,
-            quantity: 1,
-        });
-        console.log(cart);
-    }
+    cart = newCart;
+    saveToStorage();
 }
+
