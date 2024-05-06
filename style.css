@@ -7,40 +7,22 @@
 }
 
 /* .................................................................................................... */
-
-    
-
-@media screen and (max-width:800px) {
-    
-
-    
-
-   
-    .footer{
-        flex-direction: column;
-        align-items: center !important;
-    }
-    .element1{
-        display: grid;
-        place-items:center;
-    }
-    .element2{
-        display: grid;
-        place-items:center;
-    }
-    .element1>*{
-        margin:0.5em 0px;
-        text-align: center;
-    }
-
-    .element3{
-        margin-top: 1em;
-    }
-
-
+.svg{
+    padding: 10px;
 }
-
-
+.container-fluid{
+    padding: 10px !important;
+    margin: 10px !important;
+}
+.navbar-brand{
+    
+    font-size: 2rem !important;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}
+.col a{
+    text-decoration: none !important;
+    color: white !important;
+}
 
 .destinations{
     height: auto;
@@ -113,35 +95,6 @@
     padding:2em 1em;
     color: white;
 }
-.element1{
-    width: 20%;
-    margin:0px 1em;
-}
-.element1>*{
-    margin:0.7em 0px;
-    text-align: center;
-}
-
-.element2{
-    width: 35%;
-    display: grid;
-    place-items:center;
-}
-.element1{
-    width: 35%;
-    display: grid;
-    place-items:center;
-}
-.element2>h1{
-    color:white;
-}
-.element3{
-    width:30%;
-    
-}
-.element3>*{
-    margin:0.7em 0px;
-}
 
 .social-links>a,h4{
     text-decoration: none;
@@ -149,24 +102,10 @@
     display: block;
     margin-top:0.5em;
 }
-.element1>a,h4{
-    text-decoration: none;
-    color: white;
-    display: block;
-    margin-top:0.5em;
-}
+
 .social-links>a:hover{
     color: rgb(139, 139, 210);
 }
-
-.element3{
-    width:20%;
-    
-}
-.element3>*{
-    margin:0.7em 0px;
-}
-
 .social-links>a,h4{
     text-decoration: none;
     color: white;
@@ -271,7 +210,7 @@ list-style-type: none;
     text-decoration: none;
     margin: 10px;
     color: #0d0d0e;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     
 }
 
@@ -432,3 +371,24 @@ body.showCart .container{
 .cartTab h1{
     margin-bottom: 20px;
 }
+.card {
+    background-image: url('images/nike-just-do-it.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nike2 {
+    background-image: url('images/nike-just-do-it\ 2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nike3 {
+    background-image: url('images/nike-just-do-it\ 3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-link{
+
+    font-size: 1.7rem !important;
+}
+

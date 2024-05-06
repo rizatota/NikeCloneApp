@@ -1,75 +1,87 @@
-
-/**/
 import { cart,removeFromCart} from "./cart.js";
-import { products } from "./products.js";
-let cartSummaryHtml = '';
+import { products } from "./products.js"; 
 
-cart.forEach((cartItem)=>{
-    const productId = cartItem.productId;
-    let matchingProduct;
-    products.forEach((product)=>{
-        if (product.id === productId){
-            matchingProduct = product;
-        }
-    });
+    let mainHtml='';
+        cart.forEach((cartItem)=>{
+        const productId=cartItem.productId; 
+        let matchingProduct;
+        products.forEach(category => {
+          category.items.forEach(item => {
 
-    if (matchingProduct) {
-        // Generate HTML for the matching product
-        cartSummaryHtml += `
-        <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
-        <div class="delivery-date">
-        Delivery date: Wednesday, June 15
-        </div>
 
-        <div class="cart-item-details-grid">
-        <img class="product-image"
-            src="${matchingProduct.img}">
-
-            <div class="cart-item-details">
-                <div class="product-name">
-                ${matchingProduct.name}
+              if (item.id === productId){
+                  matchingProduct = item;
+        
+        mainHtml+=`
+            <div class="cart-item-container js-cart-item-container-${matchingProduct.id}">
+                <div class="cart-item-details-grid">
+                    <img class="product-image"
+                    src="${matchingProduct.img}">
+                <div class="cart-item-details">
+                    <div class="product-name">
+                    ${matchingProduct.name}
+                    </div>
+                    <div class="product-price" >
+                    $${matchingProduct.price}
+                    </div>
+                  <div class="product-quantity">
+                    <span>
+                      Quantity: <span class="quantity-label">${cartItem.quantity}</span>
+                    </span> 
+                    <span class="delete-quantity-link link-primary"   data-product-id="${matchingProduct.id}">
+                      Delete
+                    </span>
+                  </div>
                 </div>
-                <div class="product-price">
-                $${matchingProduct.price}
-                </div>
-                <div class="product-quantity">
-                <span>
-                    Quantity: <span class="quantity-label">${cartItem.quantity}</span>
-                </span>
-                <span class="update-quantity-link link-primary">
-                    Update
-                </span>
-                <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
-                    Delete
-                </span>
-                </div>
+               </div>
             </div>
-
-        </div>
-</div>
-
         `;
-    } else {
-        console.log(`Product with ID ${productId} not found in the products array.`);
-    }
-});
-
-
-       
-        
-
-document.querySelector(".js-order-summary").innerHTML=cartSummaryHtml;
-
-document.querySelectorAll('.js-delete-link').forEach((link)=> {
-    link.addEventListener('click',(event)=>{
-       
-            const productId = link.dataset.productId;
-       
-           removeFromCart(productId);
-            const container=document.querySelector(`.js-cart-item-container-${productId}`);
-            container.remove();
+          }
+    });
+  });
     
-        
- });
+document.querySelector('.order-summary').innerHTML=mainHtml;
+}); 
+
+ 
+const payment=calculateTotalSum();
+const paymentDisplay=document.querySelector('.payment-summary-money');
+paymentDisplay.innerHTML=payment;
+
+
+document.querySelectorAll(".delete-quantity-link").forEach((deleteLink)=>{
+    deleteLink.addEventListener('click',function (event) {
+        if (event.target) {
+        const productId = event.target.getAttribute('data-product-id'); 
+        removeFromCart(productId);
+        const container=document.querySelector(`.js-cart-item-container-${productId}`);
+        container.remove(); 
+        updateTotalSum(); 
+        }
+});
 });
 
+
+export function calculateTotalSum() {
+  let totalPrice = 0;
+  cart.forEach((item) => {
+      const productId = item.productId;
+      const quantity = item.quantity;
+      const matchingProduct = products.reduce((matchingProduct, category) => {
+          const foundProduct = category.items.find(product => product.id === productId);
+          return foundProduct ? foundProduct : matchingProduct;
+      }, null);
+      if (matchingProduct) {
+          totalPrice += matchingProduct.price * quantity;
+      }
+  });
+  return totalPrice;
+}
+
+ 
+
+ export function updateTotalSum() {
+  const totalSum = calculateTotalSum();
+  const totalSumDisplay = document.querySelector('.payment-summary-money');
+  totalSumDisplay.textContent = `$ ${totalSum}`; // Format the total sum as currency
+}
